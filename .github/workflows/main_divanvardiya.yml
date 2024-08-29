@@ -24,25 +24,24 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          python3 -m venv venv
+          python -m venv venv
           source venv/bin/activate
       
       - name: Install dependencies
         run: pip install -r requirements.txt
-
+        
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
-      
-      - name: List files before zipping
-        run: ls -R
 
       - name: Zip artifact for deployment
-        run: zip -r release.zip . -x "venv/*"
+        run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
         with:
           name: python-app
-          path: release.zip
+          path: |
+            release.zip
+            !venv/
 
   deploy:
     runs-on: ubuntu-latest
@@ -60,13 +59,11 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-      - name: List files after unzip
-        run: ls -R
-
+      
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
           app-name: 'divanvardiya'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F2537DFA37564EB7867DE962C45F4A0C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0176FA62E503469489322A3086E4F600 }}
