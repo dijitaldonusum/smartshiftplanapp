@@ -94,9 +94,7 @@ def sonuclari_excel_olarak_indir(personel_programi):
         tum_personellerin_programi.to_excel(writer, index=False, sheet_name='Vardiya Planı')
         pd.DataFrame(toplam_calisma_saatleri).to_excel(writer, index=False, sheet_name='Toplam Çalışma Saatleri')
         pd.DataFrame(havuz_personel_listesi).to_excel(writer, index=False, sheet_name='Havuz Personelleri')  # Havuz personelleri sayfasına 'Eksik Saat' sütunu ekle
-        pd.DataFrame(gorevler).to_excel(writer, index=False, sheet_name='Görevler')
-        pd.DataFrame(taslak_plan).to_excel(writer,index=False, sheet_name='Gerçek Plan')
-        pd.DataFrame(yorumlar).to_excel(writer,index=False, sheet_name='Yorumlar')
+
     processed_data = output.getvalue()
     
     return processed_data
