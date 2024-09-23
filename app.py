@@ -41,34 +41,6 @@ def sonuclari_excel_olarak_indir(personel_programi):
     tum_personellerin_programi = pd.DataFrame()
     toplam_calisma_saatleri = []
     havuz_personel_listesi = []  # Havuz personel listesi
-    gorevler = [
-        {"AD SOYAD": "HASAN ŞİT", "GÖREVLER": "Menaj Dolumu"},
-        {"AD SOYAD": "SİBEL DİZGE", "GÖREVLER": "Menaj Dolumu"},
-        {"AD SOYAD": "BİLGE KURT", "GÖREVLER": "Ekmek Sepeti Temizliği"},
-        {"AD SOYAD": "CEREN SAĞLAMDEMİR", "GÖREVLER": "Baharatlık Temizliği"},
-        {"AD SOYAD": "OSMAN YAMAN", "GÖREVLER": "Yağdanlık Dolumu"},
-        {"AD SOYAD": "HİDAYET UYSAL", "GÖREVLER": "Takım Tabak Dağıtımı"},
-        {"AD SOYAD": "FERHAT COŞKUN", "GÖREVLER": "Küllük Temizliği"},
-        {"AD SOYAD": "MERTKAN MERÇİL", "GÖREVLER": "Salon Düzeni"},
-        {"AD SOYAD": "ÇAĞATAY KAYA", "GÖREVLER": "Dümenlerin Silinmesi"}
-    ]
-    gorevler_df = pd.DataFrame(gorevler)
-    taslak_plan = [{"AD SOYAD": "HASAN ŞİT", "Pazartesi": "","Salı": "","Çarşamba": "","Perşembe": "","Cuma": "","Cumartesi": "","Pazar": ""},
-                   {"AD SOYAD": "SİBEL DİZGE", "Pazartesi": "","Salı": "","Çarşamba": "","Perşembe": "","Cuma": "","Cumartesi": "","Pazar": ""},
-                   {"AD SOYAD": "BİLGE KURT", "Pazartesi": "","Salı": "","Çarşamba": "", "Perşembe": "","Cuma": "","Cumartesi": "","Pazar": ""},
-                   {"AD SOYAD": "CEREN SAĞLAMDEMİR", "Pazartesi": "","Salı": "","Çarşamba": "","Perşembe": "","Cuma": "","Cumartesi": "","Pazar": ""},
-                   {"AD SOYAD": "OSMAN YAMAN", "Pazartesi": "","Salı": "","Çarşamba": "","Perşembe": "","Cuma": "","Cumartesi": "","Pazar": ""},
-                   {"AD SOYAD": "HİDAYET UYSAL", "Pazartesi": "","Salı": "","Çarşamba": "","Perşembe": "","Cuma": "","Cumartesi": "","Pazar": ""},
-                   {"AD SOYAD": "FERHAT COŞKUN", "Pazartesi": "","Salı": "","Çarşamba": "","Perşembe": "","Cuma": "","Cumartesi": "","Pazar": ""},
-                   {"AD SOYAD": "MERTKAN MERÇİL", "Pazartesi": "","Salı": "","Çarşamba": "","Perşembe": "","Cuma": "","Cumartesi": "","Pazar": ""},
-                   {"AD SOYAD": "ÇAĞATAY KAYA", "Pazartesi": "","Salı": "","Çarşamba": "","Perşembe": "","Cuma": "","Cumartesi": "","Pazar": ""}
-                   ]
-    yorumlar_df = pd.DataFrame(taslak_plan)  
-    yorumlar = [{"AD SOYAD": "Oktay Çiçek", "Yorum": "","Tarih": ""}
-                  
-                   ]
-    yorumlar_df = pd.DataFrame(taslak_plan)  
-    
     
     
     for personel, gunler in personel_programi.items():
